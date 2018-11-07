@@ -1,0 +1,29 @@
+{
+    "name": "pnz/json-exception",
+    "type": "library",
+    "description": "Json decode/encode library with exception throwing on error.",
+    "keywords": ["json"],
+    "license": "GPL-3.0",
+    "require": {
+        "php": "^7.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pnz\\JsonException\\": "src/"
+        },
+        "files": [
+            "src/bootstrap.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Pnz\\JsonException\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}

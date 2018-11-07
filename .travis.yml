@@ -1,0 +1,25 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+cache:
+  directories:
+    - vendor/
+    - tools/
+
+stages:
+  - phpcs
+  - test
+
+script:
+  - make tests
+
+jobs:
+  include:
+    - stage: phpcs
+      script: make phpcs
