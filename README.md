@@ -1,6 +1,7 @@
 # JSON-Exception
 
 [![Latest Version](https://img.shields.io/github/release/thePanz/json-exception.svg?style=flat-square)](https://github.com/thePanz/json-exception/releases)
+[![Downloads](https://img.shields.io/packagist/dt/pnz/json-exception.svg)](https://packagist.org/packages/pnz/json-exception)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/thePanz/json-exception/master.svg?style=flat-square)](https://travis-ci.org/thePanz/json-exception)
 
