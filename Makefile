@@ -12,7 +12,7 @@ tools/php-cs-fixer:
 	chmod +x tools/php-cs-fixer
 
 tools/phpstan:
-	wget --directory-prefix=tools --quiet https://github.com/phpstan/phpstan-shim/raw/0.10.5/phpstan
+	wget --output-document=tools/phpstan --quiet https://github.com/phpstan/phpstan/releases/download/0.12.25/phpstan.phar
 	chmod +x tools/phpstan
 
 tests: tools/phpunit
@@ -22,7 +22,7 @@ tests: tools/phpunit
 phpcs: tools/php-cs-fixer tools/phpstan
 	composer install --optimize-autoloader --no-dev --no-suggest --quiet --prefer-dist
 	tools/php-cs-fixer fix --dry-run --stop-on-violation -v
-	tools/phpstan analyze --level=7 --no-progress src/
+	tools/phpstan analyze --level=8 --no-progress src/
 
 fix-cs: tools/php-cs-fixer
 	tools/php-cs-fixer fix -v

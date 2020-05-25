@@ -31,11 +31,8 @@ final class Json
     {
         $data = \json_decode($json, $assoc, $depth, self::cleanupOptions($options));
 
-        if (JSON_ERROR_NONE !== \json_last_error()) {
-            throw new \JsonException(
-                sprintf('Unable to decode JSON: %s', \json_last_error_msg()),
-                \json_last_error()
-            );
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            throw new \JsonException(sprintf('Unable to decode JSON: %s', \json_last_error_msg()), \json_last_error());
         }
 
         return $data;
@@ -58,10 +55,7 @@ final class Json
         $string = \json_encode($value, self::cleanupOptions($options), $depth);
 
         if (JSON_ERROR_NONE !== \json_last_error()) {
-            throw new \JsonException(
-                sprintf('Unable to encode JSON: %s', \json_last_error_msg()),
-                \json_last_error()
-            );
+            throw new \JsonException(sprintf('Unable to encode JSON: %s', \json_last_error_msg()), \json_last_error());
         }
 
         return (string) $string;
