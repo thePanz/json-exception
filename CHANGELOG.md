@@ -13,5 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## v1.0.0
+### Changed
+- "Load \JsonException with composer's classmap directive
+- Added support for PHP polyfills defining \JsonException
+
 ## v0.1.0
 - First release
