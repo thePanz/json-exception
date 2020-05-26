@@ -9,17 +9,11 @@
         "ext-json": "*"
     },
     "autoload": {
-        "psr-4": {
-            "Pnz\\JsonException\\": "src/"
-        },
-        "files": [
-            "src/bootstrap.php"
-        ]
+        "psr-4": {"Pnz\\JsonException\\": "src/"},
+        "classmap": ["src/stubs"]
     },
     "autoload-dev": {
-        "psr-4": {
-            "Tests\\Pnz\\JsonException\\": "tests/"
-        }
+        "psr-4": {"Tests\\Pnz\\JsonException\\": "tests/"}
     },
     "extra": {
         "branch-alias": {
