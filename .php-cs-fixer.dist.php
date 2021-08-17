@@ -9,7 +9,7 @@ $finder = Finder::create()
     ->in(__DIR__)
 ;
 
-return Config::create()
+return (new Config())
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
@@ -34,14 +34,12 @@ return Config::create()
         'multiline_whitespace_before_semicolons' => [
             'strategy' => 'new_line_for_chained_calls',
         ],
-        'native_function_invocation' => [
-            'include' => ['@compiler_optimized'],
-        ],
+        'native_function_invocation' => false,
+        'native_constant_invocation' => false,
         'no_alternative_syntax' => true,
         'no_binary_string' => true,
         'no_null_property_initialization' => true,
         'no_php4_constructor' => true,
-        'no_short_echo_tag' => true,
         'no_superfluous_elseif' => true,
         'no_superfluous_phpdoc_tags' => true,
         'no_unreachable_default_argument_value' => true,
@@ -55,7 +53,6 @@ return Config::create()
         'php_unit_mock' => true,
         'php_unit_namespaced' => true,
         'php_unit_no_expectation_annotation' => true,
-        'php_unit_ordered_covers' => true,
         'php_unit_set_up_tear_down_visibility' => true,
         'php_unit_test_annotation' => true,
         'phpdoc_add_missing_param_annotation' => true,

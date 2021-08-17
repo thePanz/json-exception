@@ -2,17 +2,17 @@ SRC_DIR="src/"
 SRC_FILES= $(shell find $(SRC_DIR) -name "*.php")
 
 tools/phpunit:
-	wget --directory-prefix=tools --quiet https://phar.phpunit.de/phpunit-7.phar
-	mv tools/phpunit-7.phar tools/phpunit
+	wget --directory-prefix=tools --quiet https://phar.phpunit.de/phpunit-8.phar
+	mv tools/phpunit-8.phar tools/phpunit
 	chmod +x tools/phpunit
 
 tools/php-cs-fixer:
-	wget --directory-prefix=tools --quiet https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar
-	mv tools/php-cs-fixer-v2.phar tools/php-cs-fixer
+	wget --directory-prefix=tools --quiet https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.0.2/php-cs-fixer.phar
+	mv tools/php-cs-fixer.phar tools/php-cs-fixer
 	chmod +x tools/php-cs-fixer
 
 tools/phpstan:
-	wget --output-document=tools/phpstan --quiet https://github.com/phpstan/phpstan/releases/download/0.12.25/phpstan.phar
+	wget --output-document=tools/phpstan --quiet https://github.com/phpstan/phpstan/releases/download/0.12.94/phpstan.phar
 	chmod +x tools/phpstan
 
 tests: tools/phpunit
