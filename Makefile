@@ -1,9 +1,10 @@
 SRC_DIR="src/"
 SRC_FILES= $(shell find $(SRC_DIR) -name "*.php")
+PHPUNIT_VERSION= $(shell php -r 'echo version_compare("7.2.0", PHP_VERSION, "<") ? "8" : "7";')
 
 tools/phpunit:
-	wget --directory-prefix=tools --quiet https://phar.phpunit.de/phpunit-8.phar
-	mv tools/phpunit-8.phar tools/phpunit
+	wget --directory-prefix=tools --quiet https://phar.phpunit.de/phpunit-${PHPUNIT_VERSION}.phar
+	mv tools/phpunit-${PHPUNIT_VERSION}.phar tools/phpunit
 	chmod +x tools/phpunit
 
 tools/php-cs-fixer:
